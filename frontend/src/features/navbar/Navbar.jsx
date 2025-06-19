@@ -13,6 +13,7 @@ import {
   ShoppingCartIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router";
 
 const user = {
   name: "Tom Cook",
@@ -72,16 +73,18 @@ const Navbar = ({ children }) => {
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
                   <div className="relative">
-                    <button
-                      type="button"
-                      className="relative flex items-center justify-center rounded-full bg-gray-800 p-2 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition"
-                      aria-label="View cart"
-                    >
-                      <ShoppingCartIcon
-                        aria-hidden="true"
-                        className="h-6 w-6"
-                      />
-                    </button>
+                    <Link to="/cart">
+                      <button
+                        type="button"
+                        className="relative flex items-center justify-center rounded-full bg-gray-800 p-2 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition"
+                        aria-label="View cart"
+                      >
+                        <ShoppingCartIcon
+                          aria-hidden="true"
+                          className="h-6 w-6"
+                        />
+                      </button>
+                    </Link>
 
                     <span className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center rounded-full bg-red-600 px-1.5 py-0.5 text-xs font-semibold text-white shadow-sm ring-1 ring-white">
                       3
@@ -174,17 +177,22 @@ const Navbar = ({ children }) => {
                   </div>
                 </div>
                 <div className="relative ml-auto flex items-center">
-                  <button
-                    type="button"
-                    className="relative flex items-center justify-center rounded-full bg-gray-800 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition"
-                    aria-label="View cart"
-                  >
-                    <ShoppingCartIcon aria-hidden="true" className="h-6 w-6" />
-                    {/* Badge positioned inside the button if you prefer that look */}
-                    <span className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center rounded-full bg-red-600 px-1.5 py-0.5 text-xs font-semibold text-white shadow-sm ring-1 ring-white">
-                      3
-                    </span>
-                  </button>
+                  <Link to="/cart">
+                    <button
+                      type="button"
+                      className="relative flex items-center justify-center rounded-full bg-gray-800 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition"
+                      aria-label="View cart"
+                    >
+                      <ShoppingCartIcon
+                        aria-hidden="true"
+                        className="h-6 w-6"
+                      />
+                      {/* Badge positioned inside the button if you prefer that look */}
+                      <span className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center rounded-full bg-red-600 px-1.5 py-0.5 text-xs font-semibold text-white shadow-sm ring-1 ring-white">
+                        3
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="mt-3 space-y-1 px-2">
